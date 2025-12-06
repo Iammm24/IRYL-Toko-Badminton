@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>IRYL Toko Badminton</title>
+    <!-- include google material icons and .css file -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- page header -->
+    <header>
+      <div id="logo">
+        <img src="images/logo.png" alt="IRYL Logo" height="100" />
+      </div>
+      <h2>IRYL Toko Badminton</h2>
+      <div id="user-options">
+        <i class="material-icons md-36">search</i>
+        <i class="material-icons md-36">shopping_cart</i>
+        <button id="login">
+          <i class="material-icons md-36">account_box</i>
+          LOG IN
+        </button>
+      </div>
+    </header>
+
+    <!-- category menu bar -->
+    <nav>
+      <ul class="menu-bar">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li id="contact"><a href="contact.html">Kontak Kami</a></li>
+      </ul>
+    </nav>
+
+    <!-- main content -->
+    <main>
+      <a id="return-home" href="index.html">Kembali ke beranda</a>
+      <h2>KONTAK KAMI</h2>
+      <p>Silahkan isi formulir lalu kirimkan.</p>
+      <form id="contact-form" action="https://httpbin.org/post" method="POST">
+        <label for="name">Nama</label>
+        <input type="text" name="name" id="name" tabindex="1" autofocus required />
+
+        <label for="email">Alamat Email</label>
+        <input type="email" name="email" id="email" tabindex="2" placeholder="contoh@gmail.com" required />
+
+        <label for="address">Alamat</label>
+        <input type="text" name="address" id="address" tabindex="3" required />
+
+        <label for="kota">Kota</label>
+        <input id="kota" name="kota" tabindex="4" list="city-list" placeholder="Pilih Kota" required />
+
+        <!--list of Indonesia cities-->
+        <datalist id="city-list">
+          <option value="Jakarta"></option>
+          <option value="Bekasi"></option>
+          <option value="Depok"></option>
+          <option value="Bogor"></option>
+          <option value="Tangerang"></option>
+          <option value="Bandung"></option>
+          <option value="Cirebon"></option>
+          <option value="Purwakarta"></option>
+          <option value="Tasikmalaya"></option>
+          <option value="Semarang"></option>
+          <option value="Surabaya"></option>
+          <option value="Malang"></option>
+          <option value="Sidoarjo"></option>
+          <option value="Gresik"></option>
+          <option value="Yogyakarta"></option>
+          <option value="Solo"></option>
+          <option value="Magelang"></option>
+          <option value="Bantul"></option>
+          <option value="Denpasar"></option>
+          <option value="Mataram"></option>
+          <option value="Medan"></option>
+          <option value="Palembang"></option>
+          <option value="Pekanbaru"></option>
+          <option value="Padang"></option>
+          <option value="Jambi"></option>
+          <option value="Banda Aceh"></option>
+          <option value="Pontianak"></option>
+          <option value="Banjarmasin"></option>
+          <option value="Balikpapan"></option>
+          <option value="Samarinda"></option>
+          <option value="Manado"></option>
+          <option value="Makassar"></option>
+          <option value="Kendari"></option>
+          <option value="Gorontalo"></option>
+          <option value="Jayapura"></option>
+          <option value="Ambon"></option>
+          <option value="Ternate"></option>
+          <option value="Kupang"></option>
+        </datalist>
+
+        <label for="postal-code">Kode Pos</label>
+        <input type="text" id="postal-code" name="postal-code" tabindex="5" autocomplete="postal-code" placeholder="A1B 2C3" pattern="^[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d$" required />
+
+        <!--radio options to specify if it's a question, comment, or order problem-->
+
+        <label>Tentang apa ini?</label>
+        <div class="radio-options">
+          <div class="question-option">
+            <input type="radio" name="option" id="question-option" value="question" tabindex="6" checked />
+            <label for="question-option">Pertanyaan</label>
+          </div>
+
+          <div class="comment-option">
+            <input type="radio" name="option" id="comment-option" value="comment" tabindex="7" />
+            <label for="comment-option">Komentar</label>
+          </div>
+
+          <div class="order-problem-option">
+            <input type="radio" name="option" id="order-problem-option" value="order-problem" tabindex="8" />
+            <label for="order-problem-option">Masalah Pesanan</label>
+          </div>
+        </div>
+
+        <label id="order-number-label" for="order-number">Nomor Pesanan</label>
+        <input type="text" name="order-number" id="order-number" tabindex="9" placeholder="Enter Your Order Number" />
+
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here" tabindex="10" autocomplete="off" required> </textarea>
+
+        <div class="hidden">
+          <input type="hidden" name="my-name" value="Simon" />
+        </div>
+
+        <div class="submit-btn">
+          <input type="submit" name="submit-btn" id="submit-btn" tabindex="10" />
+        </div>
+      </form>
+    </main>
+
+    <!-- page footer content -->
+    <footer>
+      <div id="footer-wrapper">
+        <div>
+          <h3>Ikuti kami di media sosial</h3>
+          <img src="https://img.icons8.com/material/24/000000/facebook--v1.png" alt="Facebook Logo" />
+          <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+          <img src="https://img.icons8.com/material/24/000000/twitter--v1.png" alt="Twitter Logo" />
+          <a href="https://twitter.com/" target="_blank">Twitter</a>
+          <img src="https://img.icons8.com/material/24/000000/instagram-new--v1.png" alt="Instagram Logo" />
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        </div>
+
+        <div id="footer-logo">
+          <img src="images/logo.png" alt="SMASH logo" height="50" />
+          <h3>&copy; 2025 IRYL Toko Badminton</h3>
+        </div>
+
+        <div id="footer-subscribe">
+          <h3>Subscribe to our newsletter</h3>
+          <form action="https://formspree.io/xvowlwrl" method="POST">
+            <input type="email" name="email" id="subscribe-newsletter" placeholder="Enter your email here" />
+            <input type="submit" value="Sign Up" />
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <!-- include .js files -->
+    <script src="script.js"></script>
+    <script src="contact-script.js"></script>
+  </body>
+</html>
