@@ -12,13 +12,20 @@
   <body>
     <!-- page header -->
     <header>
+      <input
+  type="text"
+  id="search-input"
+  placeholder="Cari produk..."
+  style="display: none"
+/>
       <div id="logo">
-        <img src="images/logo.png" alt="Smash! Logo" height="100" />
+        <img src="images/logo.png" alt="Logo" height="100" />
       </div>
-      <h2>Toko Peralatan Badminton</h2>
+      <h2></h2>
       <div id="user-options">
-        <i class="material-icons md-36">search</i>
-        <i class="material-icons md-36">shopping_cart</i>
+        <i class="material-icons md-36" id="search-btn">search</i>
+        <i class="material-icons md-36 cart-icon" onclick="toggleCart()"> shopping_cart </i>
+        <span id="cart-count">0</span>
         <button id="login">
           <i class="material-icons md-36">account_box</i>
           LOG IN
@@ -38,8 +45,15 @@
       </ul>
     </nav>
 
+    <section class="hero">
+  <h1>Peralatan Badminton Terbaik</h1>
+  <p>Lengkapi perlengkapanmu dan tingkatkan performa di lapangan</p>
+  <a href="#products" class="hero-btn">Belanja Sekarang!</a>
+</section>
+
+
     <!-- main content -->
-    <main>
+     <main id="products">
       <!-- header used when all items are displayed -->
       <div id="shop-all">
         <h2>Semua Kategori</h2>
@@ -47,27 +61,31 @@
       <!-- all item images are taken from https://www.yonex.com/badminton -->
 
       <!-- racquet category items -->
-      <div class="racquets">
+      <div class="racquets" id="racquets">
         <h2>RAKET</h2>
+
         <div class="row">
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/VLTZF2.png" alt="VOLTRIC Z-Force II image" height="300" width="250" />
             </div>
             <div class="product-card-info">
-              <h3>VOLTRIC Z-Force II</h3>
-              <h4>IDR 2.450.000</h4>
-              <p>Deskripsi: Raket Seri VOLTRIC. Untuk Pemain Tingkat Lanjut.</p>
+              <h3>YONEX VOLTRIC Z-Force II</h3>
+              <h4>Rp 2.450.000</h4>
+              <p>Deskripsi: Raket YONEX Seri VOLTRIC. Untuk Pemain Tingkat Lanjut.</p>
+              <button onclick="addToCart(this,'YONEX VOLTRIC Z-Force II', 2450000, 'images/VLTZF2.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
+
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/A88D.png" alt="ASTROX 88 D image" height="300" width="250" />
             </div>
             <div class="product-card-info">
-              <h3>ASTROX 88 D</h3>
-              <h4>IDR 2.600.000</h4>
-              <p>Deskripsi: Raket Seri ASTROX. Untuk Pemain Tingkat Lanjut.</p>
+              <h3>YONEX ASTROX 88 D</h3>
+              <h4>Rp 2.600.000</h4>
+              <p>Deskripsi: Raket YONEX Seri ASTROX. Untuk Pemain Tingkat Lanjut.</p>
+              <button onclick="addToCart(this,'YONEX ASTROX 88 D', 2600000, 'images/A88D.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
         </div>
@@ -78,27 +96,31 @@
               <img src="images/d99.png" alt="DUORA 99 image" height="300" width="250" />
             </div>
             <div class="product-card-info">
-              <h3>DUORA 99</h3>
-              <h4>IDR 2.900.000</h4>
-              <p>Deskripsi: Raket Seri DUORA. Untuk Pemain Tingkat Lanjut.</p>
+              <h3>YONEX DUORA 99</h3>
+              <h4>Rp 2.900.000</h4>
+              <p>Deskripsi: Raket YONEX Seri DUORA. Untuk Pemain Tingkat Lanjut.</p>
+              <button onclick="addToCart(this,'YONEX DUORA 99', 2900000, 'images/d99.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
+
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/arc11.png" alt="ARCSABER 11 image" height="300" width="250" />
             </div>
             <div class="product-card-info">
-              <h3>ARCSABER 11</h3>
-              <h4>IDR 3.100.000</h4>
-              <p>Deskripsi: Raket Seri ARCSABER. Untuk Pemain Tingkat Lanjut.</p>
+              <h3>YONEX ARCSABER 11</h3>
+              <h4>Rp 3.100.000</h4>
+              <p>Deskripsi: Raket YONEX Seri ARCSABER. Untuk Pemain Tingkat Lanjut.</p>
+              <button onclick="addToCart(this,'YONEX ARCSABER 11', 3100000, 'images/arc11.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- shoe category items -->
-      <div class="shoes">
+      <!-- shoes category items -->
+      <div class="shoes" id="shoes">
         <h2>SEPATU</h2>
+
         <div class="row">
           <div class="product-card-wrapper">
             <div class="product-card-image">
@@ -106,18 +128,21 @@
             </div>
             <div class="product-card-info">
               <h3>Power Cushion 65 R 3 (Unisex)</h3>
-              <h4>IDR 1.200.000</h4>
+              <h4>Rp 1.200.000</h4>
               <p>Deskripsi: Bantalan yang dapat diandalkan untuk kaki dan peredam guncangan untuk persendian.</p>
+              <button onclick="addToCart(this,'Power Cushion 65 R 3', 1200000, 'images/pc65r3.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
+
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/pc36w.png" alt="Power Cushion 36 Wide image" height="240" width="200" />
             </div>
             <div class="product-card-info">
               <h3>Power Cushion 36 Wide (Unisex)</h3>
-              <h4>IDR 1.550.000</h4>
+              <h4>Rp 1.550.000</h4>
               <p>Deskripsi: Bantalan yang dapat diandalkan untuk kaki dan peredam guncangan untuk persendian.</p>
+              <button onclick="addToCart(this,'Power Cushion 36 Wide', 1550000, 'images/pc36w.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
         </div>
@@ -129,26 +154,30 @@
             </div>
             <div class="product-card-info">
               <h3>Power Cushion 65 Z 2 (Women's)</h3>
-              <h4>IDR 2.000.000</h4>
+              <h4>Rp 2.000.000</h4>
               <p>Deskripsi: Bantalan yang dapat diandalkan, sempurna untuk gerakan kaki yang cepat dan ringan.</p>
+              <button onclick="addToCart(this,'Power Cushion 65 Z 2', 2000000, 'images/pc65z2.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
+
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/pc36.png" alt="Power Cushion 36 image" height="240" width="200" />
             </div>
             <div class="product-card-info">
               <h3>Power Cushion 36 (Junior)</h3>
-              <h4>IDR 3.100.000</h4>
+              <h4>Rp 3.100.000</h4>
               <p>Deskripsi: Bantalan yang dapat diandalkan, sempurna untuk gerakan kaki yang cepat dan ringan.</p>
+              <button onclick="addToCart(this,'Power Cushion 36 Junior', 3100000, 'images/pc36.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
         </div>
       </div>
 
       <!-- shuttlecock category items -->
-      <div class="shuttlecocks">
+      <div class="shuttlecocks" id="shuttlecocks">
         <h2>SHUTTLECOCKS</h2>
+
         <div class="row">
           <div class="product-card-wrapper">
             <div class="product-card-image">
@@ -156,51 +185,95 @@
             </div>
             <div class="product-card-info">
               <h3>Mavis 350B</h3>
-              <h4>IDR 160.000</h4>
+              <h4>Rp 160.000</h4>
               <p>Deskripsi: Shuttlecock yang terjangkau dan tahan lama untuk sesi latihan.</p>
+              <button onclick="addToCart(this,'Mavis 350B', 160000, 'images/mavis350b.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
+
           <div class="product-card-wrapper">
             <div class="product-card-image">
               <img src="images/aerosensa10.png" alt="Aerosensa 10 image" height="300" width="200" />
             </div>
             <div class="product-card-info">
               <h3>Aerosensa 10</h3>
-              <h4>IDR 349.000</h4>
+              <h4>Rp 349.000</h4>
               <p>Deskripsi: YONEX AEROSENSA shuttlecocks adalah shuttlecock resmi untuk tournaments.</p>
+              <button onclick="addToCart(this,'Aerosensa 10', 349000, 'images/aerosensa10.png')">Tambahkan ke keranjang</button>
             </div>
           </div>
         </div>
       </div>
-    </main>
 
-    <!-- page footer content -->
-    <footer>
-      <div id="footer-wrapper">
-        <div>
-          <h3>Follow us on social media</h3>
-          <img src="https://img.icons8.com/material/24/000000/facebook--v1.png" alt="Facebook Logo" />
-          <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-          <img src="https://img.icons8.com/material/24/000000/twitter--v1.png" alt="Twitter Logo" />
-          <a href="https://twitter.com/" target="_blank">Twitter</a>
-          <img src="https://img.icons8.com/material/24/000000/instagram-new--v1.png" alt="Instagram Logo" />
-          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-        </div>
-
-        <div id="footer-logo">
-          <img src="images/logo.png" alt="SMASH logo" height="50" />
-          <h3>&copy; 2025 Toko Peralatan Badminton</h3>
-        </div>
-
-        <div id="footer-subscribe">
-          <h3>Subscribe to our newsletter!</h3>
-          <form action="https://formspree.io/xvowlwrl" method="POST">
-            <input type="email" name="email" id="subscribe-newsletter" autocomplete="email" placeholder="Enter your email here" required />
-            <input type="submit" name="submit" value="Sign Up" />
-          </form>
-        </div>
+      <!-- POPUP KERANJANG -->
+      <div id="cart-popup" class="cart-popup">
+        <h3>Keranjang Belanja</h3>
+        <ul id="cart-items"></ul>
+        <p id="cart-total"></p>
+        <button onclick="closeCart()">Tutup</button>
       </div>
-    </footer>
+
+      <!-- page footer content -->
+
+      <footer class="footer">
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+      <h3>Peralatan Toko Badminton</h3>
+      <p>
+        Menyediakan perlengkapan badminton berkualitas tinggi untuk pemula
+        hingga profesional.
+      </p>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-col">
+      <h3>Ikuti kami</h3>
+      <ul class="social-list">
+        <li>
+          <img src="https://img.icons8.com/material/24/ffffff/facebook--v1.png" />
+          <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+        </li>
+        <li>
+          <img src="https://img.icons8.com/material/24/ffffff/twitter--v1.png" />
+          <a href="https://twitter.com/" target="_blank">Twitter</a>
+        </li>
+        <li>
+          <img src="https://img.icons8.com/material/24/ffffff/instagram-new--v1.png" />
+          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="footer-col">
+      <h3>Berlangganan Sekarang juga!</h3>
+      <h3>Dapatkan promo & produk terbaru</h3>
+
+      <form
+        class="subscribe-form"
+        action="https://formspree.io/xvowlwrl"
+        method="POST"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Masukkan email anda"
+          required
+        />
+        <button type="Subscribe">Berlangganan</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    <img src="images/logo.png" alt="Logo" height="40" />
+    <p>© 2025 Toko Peralatan Badminton. All rights reserved.</p>
+  </div>
+</footer>
 
     <!-- include .js script -->
     <script src="script.js"></script>

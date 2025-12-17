@@ -14,7 +14,7 @@
       <div id="logo">
         <img src="images/logo.png" alt="Logo Toko" height="100" />
       </div>
-      <h2>Toko Peralatan Badminton</h2>
+      <h2></h2>
       <div id="user-options">
         <i class="material-icons md-36">search</i>
         <i class="material-icons md-36">shopping_cart</i>
@@ -41,7 +41,7 @@
       <a id="return-home" href="index.html">Kembali ke beranda</a>
       <h2>KONTAK KAMI</h2>
       <p>Silahkan isi formulir lalu kirimkan.</p>
-      <form id="contact-form" action="https://httpbin.org/post" method="POST">
+      <form id="contact-form" action="https://formspree.io/xvowlwrl" method="POST">
         <label for="name">Nama</label>
         <input type="text" name="name" id="name" tabindex="1" autofocus required />
 
@@ -97,7 +97,7 @@
         </datalist>
 
         <label for="postal-code">Kode Pos</label>
-        <input type="text" id="postal-code" name="postal-code" tabindex="5" autocomplete="postal-code" placeholder="A1B 2C3" pattern="^[A-Za-z]\d[A-Za-z]\s\d[A-Za-z]\d$" required />
+        <input type="text" id="postal-code" name="postal-code" tabindex="5" autocomplete="postal-code" placeholder="Contoh: 16435" inputmode="numeric" pattern="^[0-9]{5}$" title="Masukkan 5 digit kode pos Indonesia" required />
 
         <!--radio options to specify if it's a question, comment, or order problem-->
 
@@ -129,36 +129,55 @@
         </div>
 
         <div class="submit-btn">
-          <input type="submit" name="submit-btn" id="submit-btn" tabindex="10" />
+          <input type="submit" name="submit-btn" id="submit-btn" value="Kirim" tabindex="10" />
         </div>
       </form>
     </main>
 
     <!-- page footer content -->
-    <footer>
-      <div id="footer-wrapper">
-        <div>
-          <h3>Ikuti kami di media sosial</h3>
-          <img src="https://img.icons8.com/material/24/000000/facebook--v1.png" alt="Facebook Logo" />
-          <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-          <img src="https://img.icons8.com/material/24/000000/twitter--v1.png" alt="Twitter Logo" />
-          <a href="https://twitter.com/" target="_blank">Twitter</a>
-          <img src="https://img.icons8.com/material/24/000000/instagram-new--v1.png" alt="Instagram Logo" />
-          <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- ABOUT -->
+        <div class="footer-col">
+          <h3>Peralatan Toko Badminton</h3>
+          <p>Menyediakan perlengkapan badminton berkualitas tinggi untuk pemula hingga profesional.</p>
         </div>
 
-        <div id="footer-logo">
-          <img src="images/logo.png" alt="SMASH logo" height="50" />
-          <h3>&copy; Toko Peralatan Badminton</h3>
+        <!-- SOCIAL MEDIA -->
+        <div class="footer-col">
+          <h3>Ikuti kami</h3>
+          <ul class="social-list">
+            <li>
+              <img src="https://img.icons8.com/material/24/ffffff/facebook--v1.png" />
+              <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <img src="https://img.icons8.com/material/24/ffffff/twitter--v1.png" />
+              <a href="https://twitter.com/" target="_blank">Twitter</a>
+            </li>
+            <li>
+              <img src="https://img.icons8.com/material/24/ffffff/instagram-new--v1.png" />
+              <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </li>
+          </ul>
         </div>
 
-        <div id="footer-subscribe">
-          <h3>Subscribe to our newsletter</h3>
-          <form action="https://formspree.io/xvowlwrl" method="POST">
-            <input type="email" name="email" id="subscribe-newsletter" placeholder="Enter your email here" />
-            <input type="submit" value="Sign Up" />
+        <!-- NEWSLETTER -->
+        <div class="footer-col">
+          <h3>Berlangganan Sekarang juga!</h3>
+          <h3>Dapatkan promo & produk terbaru</h3>
+
+          <form class="subscribe-form" action="https://formspree.io/xvowlwrl" method="POST">
+            <input type="email" name="email" placeholder="Masukkan email anda" required />
+            <button type="Subscribe">Berlangganan</button>
           </form>
         </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="footer-bottom">
+        <img src="images/logo.png" alt="Logo" height="40" />
+        <p>© 2025 Toko Peralatan Badminton. All rights reserved.</p>
       </div>
     </footer>
 
